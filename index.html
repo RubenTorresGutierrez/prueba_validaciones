@@ -2,10 +2,11 @@
 <html lang=es dir=ltr>
 
 <head>
-  <meta charset=utf-8 />
-  <meta http-equiv=X-UA-Compatible content='IE=edge' />
-  <meta name=viewport content='width=device-width, initial-scale=1' />
-  <meta name=description content='Prueba Individual Evaluable sobre Validaciones' />
+  <meta charset="UTF-8" />
+  <meta name="author" content="rtorresgutierrez.guadalupe@alumnado.fundacionloyola.net" />
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content='Prueba Individual Evaluable sobre Validaciones' />
   <title>PRU-02.01 - Ejercicio 1</title>
 
   <link rel=stylesheet href=css/reset.css />
@@ -19,7 +20,7 @@
   <div id=divError></div>
   <p>
     <label for=iMatricula>Matrícula</label>
-    <input type=text id=iMatricula />
+    <input type=text id=iMatricula pattern="^\d{4}-[A-Z]{3}|(CC|BA)-\d{4}-[A-Z]{1,2}$" />
   </p>
 
   <p>
@@ -31,17 +32,19 @@
     </select>
   </p>
 
+  <p id="asignaturas"></p>
+
   <p>
     <label for=iCalculo1>Calculos</label>
     <input type=number min=0 max=10 step=1 id=iCalculo1 />
     <input type=number min=0 max=10 step=1 id=iCalculo2 />
     <input type=number min=0 max=10 step=1 id=iCalculo3 />
-    <span id=spanMedia>N/A</span>
+    <span id=spanMedia><span id="spanValor">N/A</span></span>
   </p>
 
   <p>
     <button type=button id=btnCero>Poner a Cero</button>
-    <button>Enviar</button>
+    <button id="enviar">Enviar</button>
   </p>
 
   <script src=js/validaciones.js></script>
